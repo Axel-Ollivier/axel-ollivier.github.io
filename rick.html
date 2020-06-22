@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>My-Services | DashBoard </title>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="nav-wrapper purple accent-4">
+        <a href="index.html" class="brand-logo center">DashBoard</a>
+      </div>
+    </nav>
+  </header>
+  <div class="container" id="rick">
+
+    <!-- Modal Structure -->
+    <div id="modal_selected" class="modal">
+      <div class="modal-content row">
+        <div class="col s8">
+        <h4>{{selected.name}}</h4>
+        <p>Status : {{selected.status}}</p>
+        <p>Species : {{selected.species}}</p>
+        <p>Gender : {{selected.gender}}</p>
+        <p>Origin : {{selected.origin}}</p> 
+        </div>
+        <div class="col s4">
+            <img v-bind:src="selected.image" width="100%" height="auto">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a>
+      </div>
+    </div>
+
+    <div class="row"></div>
+
+    <!-- prev next -->
+    <div class="row">
+      <a id="prev_btn" class="waves-effect waves-light btn left purple accent-4" v-on:click="prev"><i
+          class="material-icons left">keyboard_arrow_left</i>Précédent</a>
+      <a id="next_btn" class="waves-effect waves-light btn right purple accent-4" v-on:click="next"><i
+          class="material-icons right">keyboard_arrow_right</i>Suivant</a>
+    </div>
+
+    <!-- content -->
+    <div id="card_container" class="row">
+      <div class="card col s3" v-for="result in results">
+        <div class="card-image">
+          <img v-bind:src="result.image" width="100%" height="auto">
+          <span class="card-title"><a class="modal-trigger" href="#modal_selected" v-on:click="get_selected(result.id)">{{result.name}}</a></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- prev next -->
+    <div class="row">
+      <a id="prev_btn" class="waves-effect waves-light btn left purple accent-4" v-on:click="prev" href="#rick"><i
+          class="material-icons left">keyboard_arrow_left</i>Précédent</a>
+      <a id="next_btn" class="waves-effect waves-light btn right purple accent-4" v-on:click="next" href="#rick"><i
+          class="material-icons right">keyboard_arrow_right</i>Suivant</a>
+    </div>
+  </div>
+  </div>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/vue"></script>
+  <script src="rick.js"></script>
+  <script src="init.js"></script>
+</body>
+
+</html>

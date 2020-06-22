@@ -1,0 +1,16 @@
+html {
+    scroll-behavior: smooth;
+  }
+.card{
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.card .card-title{
+    background: #AA00FF88;
+    font-weight: 400;
+	font-size: 18px;
+}
+
+a{
+    color: #FFFFFF !important;
+}
