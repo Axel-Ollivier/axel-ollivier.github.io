@@ -1,1 +1,0 @@
-__NUXT_JSONP__("/tasks", {data:[{}],fetch:[],mutations:void 0});
